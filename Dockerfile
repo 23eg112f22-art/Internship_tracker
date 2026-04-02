@@ -1,17 +1,17 @@
-# Use a fully qualified OpenJDK 17 image
+# Use a fully supported OpenJDK 17 image
 FROM eclipse-temurin:17-jdk
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy all project files
+# Copy all project files to the container
 COPY . .
 
-# Build the app using Maven wrapper
+# Build the app using Maven wrapper, skip tests for faster build
 RUN ./mvnw clean package -DskipTests
 
-# Expose Spring Boot default port
+# Expose the default Spring Boot port
 EXPOSE 8080
 
-# Run the built jar (update name if needed)
+# Run the built jar (update the jar name if your version differs)
 CMD ["java", "-jar", "target/internship-tracker-0.0.1-SNAPSHOT.jar"]
