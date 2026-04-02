@@ -14,4 +14,4 @@ RUN ./mvnw clean package -DskipTests
 EXPOSE 8080
 
 # Run the built jar (update the jar name if your version differs)
-CMD ["java", "-jar", "target/internship-tracker-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/Internship_tracker-0.0.1-SNAPSHOT.jar"]
